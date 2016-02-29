@@ -8,21 +8,7 @@ public class Board {
 
     private final int width = 10;
     private final int height = 18;
-
-    public Cell at(Integer x, Integer y) {
-        Integer realY = height - y - 1;
-
-        try {
-            return rows.get(realY).get(x);
-        } catch (IndexOutOfBoundsException exception) {
-            return new Cell();
-        }
-    }
-
-    public static class Row extends LinkedList<Cell> {
-    }
-
-    List<Row> rows = new LinkedList<>();
+    private List<Row> rows = new LinkedList<>();
 
     public Board() {
         IntStream.range(0, rowCount()).forEach(rowNumber -> {
@@ -33,6 +19,16 @@ public class Board {
                 row.add(new Cell());
             });
         });
+    }
+
+    public Cell at(Integer x, Integer y) {
+        Integer realY = height - y - 1;
+
+        try {
+            return rows.get(realY).get(x);
+        } catch (IndexOutOfBoundsException exception) {
+            return new Cell();
+        }
     }
 
     public List<Row> rows() {

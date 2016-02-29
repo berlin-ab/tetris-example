@@ -10,7 +10,8 @@ public class Game {
     public Game() {
         started = false;
         board = new Board();
-        position = board.rowCount()-1;
+
+        position = board.rowCount() - 1;
         spawnPoint = 0;
     }
 
