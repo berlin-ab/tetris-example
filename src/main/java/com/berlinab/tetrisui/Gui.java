@@ -36,8 +36,6 @@ public class Gui {
 
         this.rows.add("------------");
 
-        System.out.println(rows);
-
         return rows;
     }
 }
